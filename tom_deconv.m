@@ -30,8 +30,10 @@ function [ deconv ] = tom_deconv_tomo( vol, angpix, defocus, snrfalloff, deconvs
 %
 %
 % Usage example:
+% mytomo = tom_mrcread('mytomo.rec');
+% mytomo = mytomo.Value;
 % deconv = tom_deconv_tomo(mytomo, 3.42, 6, 1.1, 1, 0.02, false, 0);
-%
+% tom_mrcwrite(deconv, 'name', 'deconv.mrc', 'style', 'classic', 'pixelsize', 3.42);
 
 highpass = 0:1/2047:1;
 highpass = min(1, highpass./highpassnyquist).*pi;
